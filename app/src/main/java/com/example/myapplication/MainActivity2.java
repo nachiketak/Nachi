@@ -37,6 +37,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 // call CleverTap API
                 CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());
+                clevertapDefaultInstance.pushEvent("Product Viewed");
                 HashMap<String, Object> profileUpdate = new HashMap<String, Object>();
 
                 //Update pre-defined profile properties
@@ -53,7 +54,7 @@ public class MainActivity2 extends AppCompatActivity {
 
                 clevertapDefaultInstance.pushProfile(profileUpdate);
 
-                BufferedReader br = null;
+                /*BufferedReader br = null;
                 String line = "";
                 final String cvsSplitBy = ",";
 
@@ -92,7 +93,7 @@ public class MainActivity2 extends AppCompatActivity {
                             Logger.v(e.getMessage());
                         }
                     }
-                }
+                }*/
 
             }
         });
